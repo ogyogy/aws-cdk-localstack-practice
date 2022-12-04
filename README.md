@@ -12,6 +12,7 @@
 3. スタックをデプロイする。
 
     ```bash
+    cd hello-world
     npm install
     cdklocal bootstrap aws://000000000000/us-east-1
     cdklocal deploy
