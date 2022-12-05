@@ -32,16 +32,24 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"esbenp.prettier-vscode",
 				"ms-python.python"
 			],
 			"settings": {
 				"editor.formatOnPaste": true,
 				"editor.formatOnSave": true,
 				"editor.formatOnType": true,
-				"python.linting.pylintEnabled": false,
+				"prettier.singleQuote": true,
 				"python.linting.flake8Enabled": true,
+				"python.linting.pylintEnabled": false,
 				"terminal.integrated.defaultProfile.linux": "zsh",
 				"[python]": {
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": true
+					}
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode",
 					"editor.codeActionsOnSave": {
 						"source.organizeImports": true
 					}
