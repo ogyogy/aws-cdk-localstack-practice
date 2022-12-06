@@ -10,4 +10,5 @@ AWS CDKの練習用リポジトリ。
     docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
     ```
 
-2. 各プロジェクトフォルダの`README.md`に従いスタックをデプロイする。
+2. VSCodeから開発用コンテナにアクセスする。 _cf._ [Developing inside a Container using Visual Studio Code Remote Development](https://code.visualstudio.com/docs/devcontainers/containers)
+3. 各プロジェクトフォルダの`README.md`に従いスタックをデプロイする。
