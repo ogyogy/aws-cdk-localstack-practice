@@ -1,0 +1,68 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.9"
+		}
+	},
+	// An array of Docker CLI arguments that should be used when running the container.
+	"runArgs": [
+		"--add-host=host.docker.internal:host-gateway"
+	],
+	// A set of name-value pairs that sets or overrides environment variables for the container.
+	"containerEnv": {
+		// Set the hostname for the LocalStack instance.
+		// For awslocal
+		"LOCALSTACK_HOST": "host.docker.internal",
+		// For cdklocal
+		"LOCALSTACK_HOSTNAME": "host.docker.internal"
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": [
+		".devcontainer/install.sh"
+	],
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"ms-python.python"
+			],
+			"settings": {
+				"editor.formatOnPaste": true,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"prettier.singleQuote": true,
+				"python.linting.flake8Args": [
+					"--ignore=E501"
+				],
+				"python.linting.flake8Enabled": true,
+				"python.linting.pylintEnabled": false,
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"[python]": {
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": true
+					}
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode",
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": true
+					}
+				},
+				"[json]": {
+					"editor.defaultFormatter": "vscode.json-language-features"
+				}
+			}
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
