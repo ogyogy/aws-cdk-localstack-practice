@@ -36,9 +36,10 @@ awslocal dynamodb batch-write-item --request-items file://test.json
 # データが正常に追加されていることを確認
 # TableNameはDynamoDBのテーブル名に置き換える
 awslocal dynamodb scan --table-name TableName
-# 関数URLにアクセス
+# ブラウザで関数URLにアクセス
 # FunctionUrlは関数URLの値に置き換える
 # URLの末尾の数字は登録したデータのidを指定する
+# 登録したデータがJSONで返却されたら成功
 curl -i http://FunctionUrl/items/1
 # アプリのリソースを破棄
 cdklocal destroy

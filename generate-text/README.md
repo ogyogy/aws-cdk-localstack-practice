@@ -16,8 +16,6 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 ## Usage
 
 ```bash
-# LocalStackを起動
-docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
 # スタックをデプロイ
 npm install
 cdklocal bootstrap aws://000000000000/us-east-1
@@ -25,12 +23,14 @@ cdklocal deploy
 # デプロイしたLambda関数および関数URLを取得
 # Lambda関数の名前を取得
 awslocal lambda list-functions --query 'Functions[].[FunctionName,Runtime]' --output text
-# 関数URLを取得
-# FunctionNameはLambda関数の名前を指定する
-awslocal lambda get-function-url-config --function-name FunctionName
-5. Lambda関数を実行する。もしくは関数URLにアクセスする。
 # FunctionNameはLambda関数の名前を指定する
 awslocal lambda invoke --function-name FunctionName /dev/stdout
+# S3のバケット名を確認
+awslocal s3 ls
+# S3のバケットの中身を確認
+# BucketNameは確認したバケット名を指定する
+# Lambdaの実行日時.txtが表示されたら成功
+awslocal s3 ls s3://BucketName
 # アプリのリソースを破棄
 cdklocal destroy
 ```
