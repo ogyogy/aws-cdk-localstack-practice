@@ -16,8 +16,6 @@ export class HttpApiDynamoDbStack extends cdk.Stack {
 
     // DynamoDBのテーブルを作成
     const db = new dynamodb.Table(this, 'TodoItems', {
-      // テーブル名
-      tableName: 'TodoItems',
       // パーティションキー
       partitionKey: {
         name: 'id',
@@ -29,8 +27,6 @@ export class HttpApiDynamoDbStack extends cdk.Stack {
 
     // Lambda関数を作成
     const todoLambda = new lambda.Function(this, 'TodoHandler', {
-      // 関数名
-      functionName: 'TodoHandler',
       // ランタイム
       runtime: lambda.Runtime.PYTHON_3_9,
       // ハンドラー関数の名前
