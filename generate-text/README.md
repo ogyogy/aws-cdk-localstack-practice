@@ -29,7 +29,7 @@ awslocal lambda list-functions --query 'Functions[].[FunctionName,Runtime]' --ou
 # FunctionNameはLambda関数の名前を指定する
 awslocal lambda get-function-url-config --function-name FunctionName
 5. Lambda関数を実行する。もしくは関数URLにアクセスする。
-# FunctionName>はLambda関数の名前を指定する
+# FunctionNameはLambda関数の名前を指定する
 awslocal lambda invoke --function-name FunctionName /dev/stdout
 # アプリのリソースを破棄
 cdklocal destroy
