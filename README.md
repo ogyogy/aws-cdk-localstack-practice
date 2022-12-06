@@ -7,7 +7,6 @@ AWS CDKの練習用リポジトリ。
 1. LocalStackを起動する。
 
     ```bash
-    # LocalStackを起動
     docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
     ```
 
