@@ -34,3 +34,7 @@ awslocal lambda invoke --function-name FunctionName /dev/stdout
 # アプリのリソースを破棄
 cdklocal destroy
 ```
+
+## Architecture
+
+![Architecture](../architecture-diagrams/hello-world.png)

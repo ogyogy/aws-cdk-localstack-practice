@@ -34,3 +34,7 @@ awslocal s3 ls s3://BucketName
 # アプリのリソースを破棄
 cdklocal destroy
 ```
+
+## Architecture
+
+![Architecture](../architecture-diagrams/generate-text.png)

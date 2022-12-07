@@ -98,3 +98,7 @@ Example of `test.json`. Replace `TableName` with your DynamoDB table name.
     ]
 }
 ```
+
+## Architecture
+
+![Architecture](../architecture-diagrams/http-api-dynamo-db.png)
